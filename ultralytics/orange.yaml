@@ -1,0 +1,5 @@
+train: E:\shencong\ultralytics\ultralytics\VOCdevkit\images\train # 训练集路径
+val: E:\shencong\ultralytics\ultralytics\VOCdevkit\images\val # 验证集路径
+test: E:\shencong\ultralytics\ultralytics\VOCdevkit\images\test
+nc: 1 #类别数量 number of classes
+names: ['orange'] # 类别的名字
