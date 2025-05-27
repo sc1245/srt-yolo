@@ -23,8 +23,8 @@ import  matplotlib.pyplot as plt
 if not os.path.exists('history'):
     os.makedirs('history')
 model_map = {
-    'FPH-CDet': '/mount/src/str-yolo/best.pt',
-    'yolov7-tiny': '/mount/src/str-yolo/runs/detect/train2/weights/best.pt',
+    'FPH-CDet': '/mount/src/srt-yolo/best.pt',
+    'yolov7-tiny': '/mount/src/srt-yolo/runs/detect/train2/weights/best.pt',
 }
 
 st.set_page_config(page_title="在线检测平台", page_icon=":desktop_computer:")
