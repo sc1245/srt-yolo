@@ -121,7 +121,7 @@ def predict_video(video_path):
             # fps = cap.get(cv2.CAP_PROP_FPS)
 
             # 设置输出视频文件
-            output_path = "predict_video.mp4"
+            output_path = "/mount/src/srt-yolo/predict_video.mp4"
             fourcc = cv2.VideoWriter_fourcc(*'X264')
             out = cv2.VideoWriter(output_path, fourcc, fps, (frame_width, frame_height))
 
@@ -287,14 +287,14 @@ elif selected == '视频检测':
                 with col1:
                     st.video(video_path, autoplay=True, muted=True)
                 with col2:
-                    st.video(open("predict_video.mp4", "rb").read(), autoplay=True, muted=True)
+                    st.video(open("./predict_video.mp4", "rb").read(), autoplay=True, muted=True)
                 timestamp = int(time.time())
                 shutil.copy('./predict_video.mp4', 'history/{}_video.mp4'.format(timestamp))
                 with open("history.txt", mode='a+', encoding='utf8') as f:
                     f.write("{}\t{}\t{}\t{}\n".format('history/{}_video.mp4'.format(timestamp),
                                               datetime.now().strftime('%Y-%m-%d'), ','.join([str(_) for _ in count_res]), fps))
                 f.close()
-                with open("predict_video.mp4", "rb") as file:
+                with open("./predict_video.mp4", "rb") as file:
                     btn = st.download_button(
                         label="Download result",
                         data=file,
@@ -321,14 +321,14 @@ elif selected == '视频检测':
             with col1:
                 st.video(video_path, autoplay=True, muted=True)
             with col2:
-                st.video(open("predict_video.mp4", "rb").read(), autoplay=True, muted=True)
+                st.video(open("./predict_video.mp4", "rb").read(), autoplay=True, muted=True)
             timestamp = int(time.time())
             shutil.copy('./predict_video.mp4', 'history/{}_video.mp4'.format(timestamp))
             with open("history.txt", mode='a+', encoding='utf8') as f:
                 f.write("{}\t{}\t{}\t{}\n".format('history/{}_video.mp4'.format(timestamp),
                                           datetime.now().strftime('%Y-%m-%d'), ','.join([str(_) for _ in count_res]), fps))
             f.close()
-            with open("predict_video.mp4", "rb") as file:
+            with open("./predict_video.mp4", "rb") as file:
                 btn = st.download_button(
                     label="Download result",
                     data=file,
